@@ -1,0 +1,38 @@
+<?php
+function generateFibonacci($terms) {
+    // Check if the number of terms is less than 1
+    if ($terms <= 0) {
+        echo "Number of terms must be greater than 0.";
+        return;
+    }
+
+    $fibonacci = [];
+    
+    // The first two terms of the Fibonacci sequence
+    $first = 0;
+    $second = 1;
+
+    // Add the first term to the sequence
+    $fibonacci[] = $first;
+
+    if ($terms > 1) {
+        // Add the second term to the sequence
+        $fibonacci[] = $second;
+
+        // Generate the remaining terms
+        for ($i = 2; $i < $terms; $i++) {
+            $next = $first + $second;
+            $fibonacci[] = $next;
+            $first = $second;
+            $second = $next;
+        }
+    }
+
+    // Print the Fibonacci sequence
+    echo "Fibonacci sequence up to $terms terms: " . implode(", ", $fibonacci);
+}
+
+// Example usage
+$terms = 10; // Specify the number of terms
+generateFibonacci($terms);
+?>
