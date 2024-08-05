@@ -1,0 +1,21 @@
+<?php
+function gcd($a, $b) {
+    // Ensure $a and $b are positive integers
+    $a = abs($a);
+    $b = abs($b);
+
+    // Euclidean algorithm
+    while ($b != 0) {
+        $remainder = $a % $b;
+        $a = $b;
+        $b = $remainder;
+    }
+
+    return $a;
+}
+
+// Example usage
+$number1 = 56;
+$number2 = 98;
+echo "The GCD of $number1 and $number2 is " . gcd($number1, $number2) . ".";
+?>
