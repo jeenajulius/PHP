@@ -1,0 +1,24 @@
+<?php
+function findLargest($arr) {
+    // Check if the array is empty
+    if (empty($arr)) {
+        return null; // Return null if the array is empty
+    }
+
+    // Initialize the first element as the largest
+    $largest = $arr[0];
+
+    // Iterate through the array
+    foreach ($arr as $value) {
+        if ($value > $largest) {
+            $largest = $value;
+        }
+    }
+
+    return $largest;
+}
+
+// Example usage
+$numbers = [10, 24, 5, 76, 2, 99, 38];
+echo "The largest number in the array is " . findLargest($numbers) . ".";
+?>
