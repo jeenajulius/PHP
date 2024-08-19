@@ -1,0 +1,23 @@
+<?php
+function sumOfDigits($number) {
+    // Ensure the number is positive
+    $number = abs($number);
+    $sum = 0;
+
+    // Loop through each digit
+    while ($number > 0) {
+        // Get the last digit using modulo operation
+        $digit = $number % 10;
+        // Add the digit to the sum
+        $sum += $digit;
+        // Remove the last digit
+        $number = (int)($number / 10);
+    }
+
+    return $sum;
+}
+
+// Example usage
+$number = 12345;
+echo "The sum of the digits of $number is " . sumOfDigits($number) . ".";
+?>
