@@ -1,0 +1,23 @@
+<?php
+function binaryToDecimal($binary) {
+    $decimal = 0;
+    $length = strlen($binary);
+
+    // Iterate over each digit in the binary number
+    for ($i = 0; $i < $length; $i++) {
+        // Get the current digit (as a character)
+        $digit = $binary[$length - $i - 1];
+
+        // Convert the digit to an integer and multiply by the power of 2
+        if ($digit == '1') {
+            $decimal += pow(2, $i);
+        }
+    }
+
+    return $decimal;
+}
+
+// Example usage
+$binary = "1101"; // Binary number as a string
+echo "The decimal equivalent of binary $binary is " . binaryToDecimal($binary) . ".";
+?>
