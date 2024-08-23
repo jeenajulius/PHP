@@ -1,0 +1,26 @@
+<?php
+function longestWordLength($str) {
+    // Split the string into an array of words
+    $words = explode(' ', $str);
+
+    // Initialize the maximum length to 0
+    $maxLength = 0;
+
+    // Iterate through the words and find the maximum length
+    foreach ($words as $word) {
+        // Remove any punctuation from the word
+        $cleanWord = preg_replace('/[^A-Za-z0-9]/', '', $word);
+
+        // Update maxLength if the current word is longer
+        if (strlen($cleanWord) > $maxLength) {
+            $maxLength = strlen($cleanWord);
+        }
+    }
+
+    return $maxLength;
+}
+
+// Example usage
+$string = "The quick brown fox jumped over the lazy dogs.";
+echo "The length of the longest word is " . longestWordLength($string) . ".";
+?>
