@@ -1,0 +1,19 @@
+<?php
+function reverseWords($str) {
+    // Split the string into an array of words
+    $words = explode(' ', $str);
+
+    // Reverse the array of words
+    $reversedWords = array_reverse($words);
+
+    // Join the reversed array back into a string
+    $reversedString = implode(' ', $reversedWords);
+
+    return $reversedString;
+}
+
+// Example usage
+$string = "The fox jumped over the lazy dog";
+echo "Original string: \"$string\"\n";
+echo "Reversed words string: \"" . reverseWords($string) . "\"";
+?>
