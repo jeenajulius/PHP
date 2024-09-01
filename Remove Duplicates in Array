@@ -1,0 +1,12 @@
+<?php
+function removeDuplicates($array) {
+    return array_unique($array);
+}
+
+// Example usage
+$numbers = [1, 2, 3, 2, 4, 5, 3, 6, 1];
+$uniqueNumbers = removeDuplicates($numbers);
+
+echo "Array with duplicates removed: ";
+print_r($uniqueNumbers);
+?>
