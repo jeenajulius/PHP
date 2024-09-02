@@ -1,0 +1,36 @@
+<?php
+function findSecondLargest($array) {
+    // Ensure the array has at least two elements
+    if (count($array) < 2) {
+        return null; // Not enough elements to find the second largest
+    }
+
+    // Initialize variables for the largest and second largest numbers
+    $largest = $secondLargest = PHP_INT_MIN;
+
+    // Iterate through the array
+    foreach ($array as $value) {
+        // Update the largest and second largest numbers
+        if ($value > $largest) {
+            // Update second largest before updating the largest
+            $secondLargest = $largest;
+            $largest = $value;
+        } elseif ($value > $secondLargest && $value < $largest) {
+            $secondLargest = $value;
+        }
+    }
+
+    // If no valid second largest number found
+    if ($secondLargest === PHP_INT_MIN) {
+        return null; // No valid second largest number
+    }
+
+    return $secondLargest;
+}
+
+// Example usage
+$numbers = [10, 5, 20, 20, 15, 30];
+$secondLargest = findSecondLargest($numbers);
+
+echo "The second largest number in the array is " . ($secondLargest !== null ? $secondLargest : "not found") . ".";
+?>
