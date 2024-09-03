@@ -1,0 +1,33 @@
+<?php
+function countCharacterOccurrences($str) {
+    // Initialize an empty associative array to store character counts
+    $charCount = [];
+
+    // Iterate through each character in the string
+    for ($i = 0; $i < strlen($str); $i++) {
+        $char = $str[$i];
+
+        // Convert character to lowercase to make the count case-insensitive
+        $char = strtolower($char);
+
+        // Update the count of the character
+        if (isset($charCount[$char])) {
+            $charCount[$char]++;
+        } else {
+            $charCount[$char] = 1;
+        }
+    }
+
+    return $charCount;
+}
+
+// Example usage
+$string = "Hello World!";
+$charCounts = countCharacterOccurrences($string);
+
+// Display the character counts
+echo "Character occurrences:\n";
+foreach ($charCounts as $char => $count) {
+    echo "'$char' => $count\n";
+}
+?>
