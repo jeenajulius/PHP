@@ -1,3 +1,4 @@
+
 <?php
 function countCharacterOccurrences($str) {
     // Initialize an empty associative array to store character counts
