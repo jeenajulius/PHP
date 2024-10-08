@@ -1,3 +1,4 @@
+
 <?php
 function generateFibonacci($terms) {
     // Check if the number of terms is less than 1
