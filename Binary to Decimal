@@ -1,3 +1,4 @@
+
 <?php
 function binaryToDecimal($binary) {
     $decimal = 0;
@@ -16,6 +17,7 @@ function binaryToDecimal($binary) {
 
     return $decimal;
 }
+
 
 // Example usage
 $binary = "1101"; // Binary number as a string
